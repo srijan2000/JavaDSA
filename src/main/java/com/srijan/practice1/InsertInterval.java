@@ -3,20 +3,20 @@ package com.srijan.practice1;
 //insert a given interval at the valid position,
 // merge all the overlapping intervals and return a list of mutually exclusive intervals.
 import java.util.*;
-class Interval{
+class II {
     int start;
     int end;
-    Interval(int start, int end){
+    II(int start, int end){
         this.start = start;
         this.end = end;
     }
 }
 public class InsertInterval {
-    public static List<Interval> insert(List<Interval> intervals, Interval newInterval){
+    public static List<II> insert(List<II> intervals, II newInterval){
         if(intervals == null || intervals.isEmpty()){
             return intervals;
         }
-        List<Interval> result = new LinkedList<>();
+        List<II> result = new LinkedList<>();
         int i = 0;
         while(i < intervals.size() &&
                 intervals.get(i).end < newInterval.start){
@@ -24,7 +24,7 @@ public class InsertInterval {
             i++;
         }
         while(i < intervals.size() && intervals.get(i).start <= newInterval.end){
-            Interval current = intervals.get(i);
+            II current = intervals.get(i);
             newInterval.start = Math.min(current.start, newInterval.start);
             newInterval.end = Math.max(current.end, newInterval.end);
             i++;
@@ -38,15 +38,15 @@ public class InsertInterval {
 
     }
     public static void main(String[] args) {
-        List<Interval> inputInterval = Arrays.asList(
-                new Interval(1, 3),
-                new Interval(5, 7),
-                new Interval(8, 10),
-                new Interval(11, 12)
+        List<II> inputInterval = Arrays.asList(
+                new II(1, 3),
+                new II(5, 7),
+                new II(8, 10),
+                new II(11, 12)
         );
-        Interval newInterval = new Interval(4, 9);
-        List<Interval> mergeInsert = insert(inputInterval, newInterval);
-        for(Interval interval : mergeInsert){
+        II newInterval = new II(4, 9);
+        List<II> mergeInsert = insert(inputInterval, newInterval);
+        for(II interval : mergeInsert){
             System.out.println(interval.start + " - " + interval.end);
         }
 

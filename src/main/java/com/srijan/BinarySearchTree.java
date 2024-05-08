@@ -85,6 +85,9 @@ public class BinarySearchTree {
         }
         return false;
     }
+    public boolean isValid(){
+       return isValid(root, min, max);
+    }
 
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
@@ -102,6 +105,8 @@ public class BinarySearchTree {
         }else {
             System.out.println("Key Not Found !!");
         }
+
+        System.out.println("Is Valid : " + bst.isValid());
 
     }
 
