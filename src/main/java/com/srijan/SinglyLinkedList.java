@@ -155,6 +155,7 @@ public class SinglyLinkedList {
         ListNode fourth = new ListNode(40);
 
 
+        ListNode l1 = new ListNode(10);
 
         s1.head.next = second;
         second.next = third;
