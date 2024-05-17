@@ -1,59 +1,66 @@
 package com.srijan;
 
-public class SinglyLinkedList1 {
-
+public class SinglyLinkedList1{
     ListNode head;
-    private static class ListNode{
+    private class ListNode{
         int data;
         ListNode next;
-        private ListNode(int data){
-
+        ListNode(int data){
             this.data = data;
             this.next = null;
 
         }
     }
-    public void display(ListNode head){
+    public void add(int data){
+        ListNode newNode = new ListNode(data);
+        if(head == null){
+            head = new ListNode(data);
+        }else{
+            ListNode current = head;
+            while(current.next != null){
+                current = current.next;
+
+            }
+            current.next = new ListNode(data);
+        }
+    }
+    public void display(){
         ListNode current = head;
-        while (current != null){
-            System.out.print(current.data + "--> ");
+        while(current != null){
+            System.out.print(current.data + "-> ");
             current = current.next;
         }
         System.out.println("null");
     }
     public void removeDuplicate(){
         if(head == null){
-            return;
+            System.out.println("List is null");
         }
         ListNode current = head;
-        while (current != null && current.next != null){
+        while(current != null && current.next != null){
             if(current.data == current.next.data){
                 current.next = current.next.next;
-            }else {
+            }else{
                 current = current.next;
             }
         }
+
     }
+
     public static void main(String[] args){
-        SinglyLinkedList1 s11 = new SinglyLinkedList1();
-        s11.head = new ListNode(1);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(2);
-        ListNode fourth = new ListNode(3);
-        ListNode fifth = new ListNode(3);
-        ListNode sixth = new ListNode(4);
+        SinglyLinkedList1 s1 = new SinglyLinkedList1();
+        s1.add(10);
+        s1.add(20);
+        s1.add(30);
+        s1.add(40);
+        s1.add(40);
 
-        s11.head.next = second;
-        second.next = third;
-        third.next = fourth;
-        fourth.next = fifth;
-        fifth.next = sixth;
+        s1.display();
+
+        s1.removeDuplicate();
+
+        s1.display();
 
 
-        s11.display(s11.head);
-
-        s11.removeDuplicate();
-
-        s11.display(s11.head);
     }
 }
