@@ -46,6 +46,23 @@ public class SinglyLinkedList1{
         }
 
     }
+    public ListNode reverseNode(){
+        head = reverseNode(head);
+        return head;
+    }
+    public ListNode reverseNode(ListNode head){
+        ListNode current = head;
+        ListNode prev = null;
+        ListNode next = null;
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+
+        }
+        return prev;
+    }
 
     public static void main(String[] args){
         SinglyLinkedList1 s1 = new SinglyLinkedList1();
@@ -58,6 +75,8 @@ public class SinglyLinkedList1{
         s1.display();
 
         s1.removeDuplicate();
+        s1.display();
+        s1.reverseNode();
 
         s1.display();
 
