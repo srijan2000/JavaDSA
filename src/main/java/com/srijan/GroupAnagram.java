@@ -20,7 +20,7 @@ public class GroupAnagram {
 
     }
 
-    public static void main(String[] args) {
+    public static void bmain(String[] args) {
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
         List<List<String>> res = groupAnagrams(strs);
         for(List<String> print : res){
