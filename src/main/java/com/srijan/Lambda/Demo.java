@@ -1,4 +1,4 @@
-package com.srijan.threads.Lambda;
+package com.srijan.Lambda;
 import java.util.*;
 import java.util.function.Predicate;
 
