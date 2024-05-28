@@ -9,6 +9,7 @@ public class NumberPrinter implements Runnable {
     }
 
     public void run(){
+
         System.out.println("Printed by thread : " + Thread.currentThread().getName() +": " +num );
     }
 }
