@@ -1,5 +1,4 @@
-package com.srijan.Lambda;
-import java.util.*;
+package com.srijan.lambda;
 import java.util.function.Predicate;
 
 public class Demo {

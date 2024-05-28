@@ -1,8 +1,7 @@
-package com.srijan.Lambda;
+package com.srijan.lambda;
 
 import java.util.Date;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class Demo3 {

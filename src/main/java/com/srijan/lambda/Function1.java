@@ -1,4 +1,4 @@
-package com.srijan.Lambda;
+package com.srijan.lambda;
 import java.util.ArrayList;
 import java.util.function.Function;
 
